@@ -1,0 +1,17 @@
+ROOM TO BLOOM original synthetic demo audio
+
+Files: forest.wav, rain.wav, ocean.wav, cafe.wav, instrumental.wav,
+lofi.wav, white-noise.wav.
+Generated offline by scripts/generate-audio.py; no external recordings,
+compositions, samples, speech, or third-party source audio were used.
+
+To the extent possible under law, the creators of these original synthetic
+ROOM TO BLOOM demo audio files and their synthesis generator waive all
+copyright and related or neighboring rights to these works under the
+Creative Commons CC0 1.0 Universal dedication.
+SPDX-License-Identifier: CC0-1.0
+Legal text: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+This dedication covers these generated audio files and the synthesis
+script only. It makes no claim about the room illustrations, GLB models,
+or other files supplied with the project.

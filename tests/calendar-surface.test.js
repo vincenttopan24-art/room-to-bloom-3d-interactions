@@ -1,0 +1,6 @@
+// @vitest-environment node
+import {it,expect} from 'vitest';
+import {Scene,Mesh,PlaneGeometry,MeshBasicMaterial} from 'three';
+import {calendarSurfaceHeight} from '../src/objects/Calendar.jsx';
+it('places dynamic dates above the original textured March artwork, not only above the paper block',()=>{const scene=new Scene(),art=new Mesh(new PlaneGeometry(3.7,6.5),new MeshBasicMaterial());art.name='Bertie_Artwork_and_March_Grid';art.rotation.x=-Math.PI/2;art.position.y=.119;scene.add(art);expect(calendarSurfaceHeight(scene)).toBeGreaterThan(.119);expect(calendarSurfaceHeight(scene)).toBeLessThan(.14);art.geometry.dispose();art.material.dispose();});
+it('keeps the date surface in model coordinates after a parent rotates and scales the calendar',async()=>{const {Group}=await import('three');const parent=new Group(),scene=new Scene(),art=new Mesh(new PlaneGeometry(3.7,6.5),new MeshBasicMaterial());art.name='Bertie_Artwork_and_March_Grid';art.rotation.x=-Math.PI/2;art.position.y=.119;scene.add(art);const before=calendarSurfaceHeight(scene);parent.add(scene);parent.rotation.set(Math.PI/2,.2,0);parent.scale.setScalar(.55);parent.position.set(2,3,4);parent.updateMatrixWorld(true);expect(calendarSurfaceHeight(scene)).toBeCloseTo(before,7);art.geometry.dispose();art.material.dispose();});
